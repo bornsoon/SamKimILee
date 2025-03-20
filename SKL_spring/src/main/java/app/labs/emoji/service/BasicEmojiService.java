@@ -48,4 +48,5 @@ public class BasicEmojiService implements EmojiService {
     public int getEmoji(int boardId, String emojiCategory) {
         return emojiRepository.getEmoji(boardId, emojiCategory);
     }
+
 }
