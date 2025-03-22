@@ -2,7 +2,20 @@
 <img src="https://github.com/user-attachments/assets/50dbb390-fd92-4986-ac8b-d5dbfc54f11e">
 </div>
 
-<h2>🎯 프로젝트 소개</h2>
+<h2>🎯 목차</h2>
+01. <a href=#1>프로젝트 소개</a><br>
+02. <a href=#2> Architecture</a><br>
+03. <a href=#3>ERD</a><br>
+04. <a href=#4>Class Diagram</a><br>
+05. <a href=#5>프로젝트 구성원</a><br>
+06. <a href=#6>기술 스택</a><br>
+07. <a href=#7>AI 자동화 시스템</a><br>
+08. <a href=#8>상세 구현 내용</a><br>
+09. <a href=#9>상세페이지</a><br>
+10. <a href=#10>회고</a><br>
+
+<br>
+<h2 id=1>🎯 프로젝트 소개</h2>
 
 #### ☝️ `AI`를 접목한,
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;나만의 감정을 인식하고 기록할 수 있는 **`  일기 공간  `** 과
@@ -10,24 +23,24 @@
 ##### 🔹 프로젝트 기간 : 2025.01.17 ~ 2025.02.25
 
 <br>
-<h2>🎯 Architecture</h2>
+<h2 id=2>🎯 Architecture</h2>
 <div align="center">
 <!-- ![Architecture-3](https://github.com/user-attachments/assets/7bfb64a8-0da8-49b7-b7ff-b74bfdd152e2) -->
 <img src=https://github.com/user-attachments/assets/0269df3b-0a6e-480e-b038-315bce7e9aba width="700">
 </div>
 
-<h2>🎯 ERD</h2>
+<h2 id=3>🎯 ERD</h2>
 <div align="center">
 <img src=https://github.com/user-attachments/assets/39f96cb1-c564-4eed-bfe8-d583659d8a4b width=900">
 </div>
 
-<h2>🎯 Class Diagram</h2>
+<h2 id=4>🎯 Class Diagram</h2>
 <div align="center">
 <img src=https://github.com/user-attachments/assets/88b90b8d-256c-4a68-a68d-78ea95638647 width="800">
 </div>
 
 <br>
-<h2>🎯 프로젝트 구성원</h2>
+<h2 id=5>🎯 프로젝트 구성원</h2>
 
 🏷 **`이효림 (📌 팀장)`**
 - **프로젝트 총괄**, 일정 관리, DB 설계  
@@ -55,7 +68,7 @@
 
 
 <br><br>
-<h2>🎯 기술스택</h2>
+<h2 id=6>🎯 기술스택</h2>
 
 ### 🖥️ 개발 환경
  <img src="https://img.shields.io/badge/Spring Tools 4-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/OracleDB 21c Express-FAA61A?style=for-the-badge&logo=oracle&logoColor=white"> <img src="https://img.shields.io/badge/AWS EC2-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white"> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
@@ -76,17 +89,23 @@
 
 
 <br><br>
-<h2>🎯 AI 자동화 시스템</h2>
+<h2 id=7>🎯 AI 자동화 시스템</h2>
 
 | **📝 일기 작성 과정**  | **💬 공감의 글 작성 과정**  |
 | ----------------- | ----------------- |
 |1. 일기 작성<br>2. **일기 요약 AI 모델**을 통한 **`일기 줄거리 자동 요약`**<br>3. **감정 분류 AI 모델**을 통한 **`"주요 감정" 자동 결정`**<br>4. **`주요 감정에 대한 피드백 제공`**|1. 공감의 글 작성<br>2. **악성 필터링 AI 모델**을 통한 **`악성글 자동 분류`**<br>3. 게시글 **`자동 숨김 처리`**<br>4. 게시글 작성자에게 **`숨김 처리 알림 전송`**|
 | <img src=https://github.com/user-attachments/assets/68e93d0c-8421-4f8d-8ce7-6a9f7f8ec6ec width="500">  | <img src=https://github.com/user-attachments/assets/18cf2bc0-9ed1-4dca-a584-6d98e9cdff21 width="500">  |
 
+<br>
+<h2 id=8>🎯 상세 구현 내용</h2>
+<h3>&nbsp;&nbsp;&nbsp;📌 AI서버 연동 & 알림 처리 </h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/bdc93d71-ed14-442f-8941-3b3c14e71605 width=800>
+<h3>&nbsp;&nbsp;&nbsp;📌 신고 기능 & 공감 버튼 </h3>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/23082c49-1e3d-4400-ba44-5626c9d5ee95 width=800>
+
 <br><br>
-<h2>🎯 상세페이지 구현</h2>
+<h2 id=9>🎯 상세페이지</h2>
 <b>
- 
  <details>
   <summary>홈 화면 상세보기</summary>
    <table>
@@ -389,6 +408,9 @@
      </td>
     </tr>
    </table>
- </details>
-  
+ </details> 
 </b>
+
+<h2 id=10>🎯 회고</h2>
+알림 기능을 구현할 때, Interceptor를 활용하여 알림 상태를 갱신하는 작업을 진행했지만, 오류가 발생하면 모든 페이지에 영향을 미치는 문제가 있어 어려움을 겪었다. 이러한 오류는 서비스 전체의 구조를 제대로 이해하지 못하면 수정하는 데 많은 시간이 소요되기 때문에, 시스템 구조에 대한 깊은 이해가 얼마나 중요한지 다시 한번 깨닫는 계기가 되었다.
+또한, 팀장 역할을 병행하며 개발을 진행하다 보니 충분한 작업 시간을 확보하지 못한 점이 아쉬웠다. 하지만 팀원들을 도와주며 함께 문제를 해결하는 과정에서 많은 것을 배울 수 있었고, 그만큼 보람찬 경험이었다.
