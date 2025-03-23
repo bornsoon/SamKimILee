@@ -74,6 +74,18 @@
 ### 📝 언어
 <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white"> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
+<br><br>
+<h2>🎯 Git-flow </h2>
+<img src="https://github.com/user-attachments/assets/b9340e7e-7107-4338-b08c-6a8bf6640ae7">
+
+#### `Description`
+1. 로컬에 메인 저장소(main repository) 클론
+2. 팀원 각자의 사용자명으로 브랜치 생성 (Git 관리자는 dev 브랜치도 생성)
+3. 단위 개발 완료 후 원격 저장소(origin)에 푸시
+4. 원격 저장소의 사용자 브랜치를 dev 브랜치에 병합
+5. 테스트 후 이상이 없으면 main 브랜치에 병합하고, 원격 저장소(origin)에 푸시
+6. 기존 사용자 브랜치(local/origin 모두) 삭제 후 main 브랜치 pull
+7. 2번부터 반복
 
 <br><br>
 <h2>🎯 AI 자동화 시스템</h2>
