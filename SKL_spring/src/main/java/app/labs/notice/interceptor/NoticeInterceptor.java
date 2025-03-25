@@ -20,23 +20,30 @@ public class NoticeInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-       log.info("NoticeInterceptor postHandle 호출됨");
-       HttpSession session = request.getSession();
-       String memberId = (String)session.getAttribute("memberid");
-       
-       log.info("modelAndView: {}, memberId: {}", modelAndView, memberId); // 상태 로그 추가
+        String memberId;
+        log.info("NoticeInterceptor postHandle 호출됨");
 
-       if (modelAndView != null && !isRedirectView(modelAndView)) {
-           if (memberId != null) {
-               int count = noticeRepository.countNotice(memberId);
-               log.info("읽지 않은 알림 수: {}", count);
+        // Spring Boot 응답이 끝난 후 세션을 만들지 않도록 설정해야 오류 안남
+
+        HttpSession session = request.getSession(false);  // 기존 세션만 사용하고 새로 생성하지 않음
+        if (session != null) {
+            memberId = (String) session.getAttribute("memberid");
+            log.info("modelAndView: {}, memberId: {}", modelAndView, memberId); // 로그인 상태 로그
+        } else {
+            memberId = null;
+            log.info("modelAndView: {}, 로그아웃 상태", modelAndView); // 로그아웃 상태 로그
+        }
+        if (modelAndView != null && !isRedirectView(modelAndView)) {
+            if (memberId != null) {
+                int count = noticeRepository.countNotice(memberId);
+                log.info("읽지 않은 알림 수: {}", count);
 //               modelAndView.addObject("hasNotice", count > 0);
-               modelAndView.addObject("noticeCount", count);
-           } else {
-               log.info("알림 없음");
-               modelAndView.addObject("hasNotice", false);
-           }
-       }
+                modelAndView.addObject("noticeCount", count);
+            } else {
+                log.info("알림 없음");
+                modelAndView.addObject("hasNotice", false);
+            }
+        }
 
 //       Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //       if (modelAndView != null && !isRedirectView(modelAndView) && authentication != null && authentication.getPrincipal() instanceof UserAccount) {
@@ -46,8 +53,8 @@ public class NoticeInterceptor implements HandlerInterceptor {
 //       }
     }
 
-   private boolean isRedirectView(ModelAndView modelAndView) {
-       return modelAndView.getViewName().startsWith("redirect:") || modelAndView.getView() instanceof RedirectView;
-   }
+    private boolean isRedirectView(ModelAndView modelAndView) {
+        return modelAndView.getViewName().startsWith("redirect:") || modelAndView.getView() instanceof RedirectView;
+    }
 
 }
