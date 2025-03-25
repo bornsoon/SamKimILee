@@ -54,7 +54,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    /*align-items: flex-start;*/
+    align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 40px 0;
