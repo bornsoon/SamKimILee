@@ -115,51 +115,51 @@
 ### **📌 ` AI 서버 연동 & 알림 처리 `**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/bdc93d71-ed14-442f-8941-3b3c14e71605 width=800>
 
-<br><br>
 ### **📌 ` 신고 기능 & 공감 버튼 `**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/23082c49-1e3d-4400-ba44-5626c9d5ee95 width=800>
+
 <br><br>
 
 <h2 id=10>🔍 문제점 및 해결 방안💡</h2>
 
-#### 1️⃣ AWS EC2에서 Oracle DB 사용 중 다운 현상 발생
-#### &nbsp;🔍 문제점
+### 1️⃣ AWS EC2에서 Oracle DB 사용 중 다운 현상 발생
+#### 🔍 문제점
 - ##### 로컬에서 구축한 Oracle DB를 AWS 환경에서 사용하기 위해 EC2에 `Docker`로 직접 설치해야 했음.
 - ##### 하지만 Oracle 21c 버전은 프리티어 `EC2의 메모리를 초과`하여 지속적으로 다운되는 문제 발생.
-#### &nbsp;💡 해결 방안
+#### 💡 해결 방안
 - ##### 보다 가벼운 Oracle 11g 버전으로 다운그레이드하여 다시 구축.
 - ##### 11g 버전에서는 Sequence를 PK의 Default 값으로 설정하는 구문이 지원되지 않음, 이에 따라 테이블 스키마와 일부 SQL 쿼리를 수정.
 - ##### EC2 요금제를 업그레이드하여 더 높은 메모리와 성능을 제공하는 인스턴스로 변경, 이를 통해 `DB 안정성 확보`.
 - ##### `Docker 볼륨`을 활용하여 DB 데이터를 영구 저장하도록 구성, 이를 통해 `컨테이너 재시작 시에도 데이터 유지 가능`하도록 개선.
 <br>
 
-#### 2️⃣ AI 모델 응답 지연 문제
-#### &nbsp;🔍 문제점
+### 2️⃣ AI 모델 응답 지연 문제
+#### 🔍 문제점
 - ##### AI 모델을 활용한 "일기의 방"과 "공감의 방" 기능에서 `요청 처리 시간`이 길어짐.
 - ##### AI 응답이 지연되면서 `기존 웹 서비스의 전체적인 성능 저하 발생`.
-#### &nbsp;💡 해결 방안
+#### 💡 해결 방안
 - ##### Spring Boot의 `@Async 어노테이션`을 활용하여 AI 모델 호출을 `별도의 스레드에서 실행`하도록 처리.
 - ##### `FastAPI 서버 실행을 비동기(Async) 방식으로 변경`하여, `Spring Boot 요청 흐름을 방해하지 않도록 개선`.
 - ##### 이로 인해 AI 모델이 실행되는 동안에도 웹 서비스가 원활하게 동작할 수 있도록 최적화.
 <br>
 
-#### 3️⃣ Spring Boot와 FastAPI 연동 문제
-#### &nbsp;🔍 문제점
+### 3️⃣ Spring Boot와 FastAPI 연동 문제
+#### 🔍 문제점
 - ##### Spring Boot가 FastAPI 실행을 기다리는 동안 `세션 생성보다 응답이 먼저 커밋`되는 문제 발생.
 - ##### `응답이 커밋된 후` 세션을 만들려고 하면 java.lang.IllegalStateException: Cannot create a session after the response has been committed `오류 발생`.
 - ##### FastAPI 프로세스 실행으로 인해 Spring Boot의 `응답 흐름이 블로킹`되는 현상이 원인.
-#### &nbsp;💡 해결 방안
+#### 💡 해결 방안
 - ##### FastAPI 실행 로그를 Spring Boot에서 출력하도록 설정하여 `디버깅 편의성 향상`.
 - ##### Spring Boot에서 `FastAPI 실행을 비동기(@Async)로 처리`하여 `메인 스레드 블로킹 방지`.
 - ##### Interceptor에서 `기존 세션만 조회`하도록 변경하여, `응답이 커밋된 후 새로운 세션을 생성하지 않도록 로직 수정`.
 - ##### 이로 인해 FastAPI와 Spring Boot가 안정적으로 연동되면서 세션 관련 오류 방지.
 <br>
 
-#### 4️⃣ CORS 문제
-#### &nbsp;🔍 문제점
+### 4️⃣ CORS 문제
+#### 🔍 문제점
 - ##### localhost와 127.0.0.1 간 요청 시 `CORS 정책`으로 인해 `Cross-Origin Request Blocked 오류` 발생.
 - ##### 일부 페이지에서 요청을 보낼 때 특정 출처만 허용되도록 설정되어 있어 `API 요청이 차단`됨.
-#### &nbsp;💡 해결 방안
+#### 💡 해결 방안
 - ##### 서버의 `Access-Control-Allow-Origin 헤더`를 수정하여 두 출처(localhost, 127.0.0.1) 모두 허용하도록 변경.
 - ##### Spring Boot의 `CorsRegistry`를 활용하여 allowedOrigins() 메서드로 `허용할 출처를 명시적으로 등록`.
 - ##### 이를 통해 `CORS 문제를 해결`하고, 개발 환경에서도 `원활한 API 호출 가능`하도록 개선.
