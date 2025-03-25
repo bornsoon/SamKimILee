@@ -29,7 +29,7 @@ public class FastAPILauncher {
             String os = System.getProperty("os.name").toLowerCase();
 
             String venv = "C:\\labs_python\\.venv\\Scripts\\activate";
-            String fastAPICommand= "python C:\\labs_python\\SamKimILee\\SKL_spring\\fastapi-server\\main1.py";
+            String fastAPICommand= "python C:\\labs_python\\SamKimILee\\SKL_spring\\fastapi-server\\main.py";
 
             if (os.contains("win")) {
                 processBuilder = new ProcessBuilder("cmd.exe", "/c", venv + " && " + fastAPICommand);
