@@ -120,7 +120,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/23082c49-1e3d-4400-ba44-5626c9d5ee95 width=800>
 
 <br><br>
-
 <h2 id=10>🔍 문제점 및 해결 방안💡</h2>
 
 ### 1️⃣ AWS EC2에서 Oracle DB 사용 중 다운 현상 발생
