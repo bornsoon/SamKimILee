@@ -114,10 +114,10 @@
 <h2 id=9>🎯 상세 구현 내용</h2>
 
 ### **📌 ` AI 서버 연동 & 알림 처리 `**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/bdc93d71-ed14-442f-8941-3b3c14e71605 width=800>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/35748168-96fc-43e6-9a46-71f2b58931f7 width=800>
 
 ### **📌 ` 신고 기능 & 공감 버튼 `**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/23082c49-1e3d-4400-ba44-5626c9d5ee95 width=800>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=https://github.com/user-attachments/assets/6cdb8482-fb29-402b-a1ba-7f0bfa28f27d width=800>
 
 <br><br>
 <h2 id=10>🔍 문제점 및 해결 방안💡</h2>
