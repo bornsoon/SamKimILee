@@ -3,7 +3,7 @@
 </div>
 
 <h2>🎯 목차</h2>
-01. <a href=#1>프로젝트 소개</a><br>
+01. <a href=#1>프로젝트 소개</a><br>        
 02. <a href=#2> Architecture</a><br>
 03. <a href=#3>ERD</a><br>
 04. <a href=#4>Class Diagram</a><br>
